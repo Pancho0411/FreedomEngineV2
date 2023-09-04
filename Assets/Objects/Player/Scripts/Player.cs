@@ -460,6 +460,8 @@ public class Player : PlayerMotor
 		}
 	}
 
+    [Header("Delays")]
+
     [SerializeField] private int poseDelay;
     private IEnumerator pose;
 
@@ -468,5 +470,16 @@ public class Player : PlayerMotor
         yield return new WaitForSeconds(poseDelay);
         state.ChangeState<Goal>();
     }
+
+	private int idleDelay = 10;
+	public IEnumerator idle;
+
+	public IEnumerator idling()
+	{
+		yield return new WaitForSeconds(idleDelay);
+		state.ChangeState<IdleState>();
+	}
+
+
 
 }

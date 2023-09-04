@@ -15,12 +15,10 @@ public class PlayerSkin : MonoBehaviour
 	[Header("Game Objects")]
 	public GameObject skin;
 	public GameObject ball;
-	public GameObject boostAura;
 
 	[Header("Renderers")]
 	public SkinnedMeshRenderer skinRenederer;
 	public MeshRenderer ballRenderer;
-	public MeshRenderer boostRenderer;
 
 	[Header("Skin Mouths")]
 	public Transform mouthCenter;
@@ -75,7 +73,6 @@ public class PlayerSkin : MonoBehaviour
 	public void ActiveBoost(bool value = true)
 	{
         currentActivatedBody.localScale = Vector3.zero;
-        currentActivatedBody = value ? boostAura.transform : skin.transform;
         currentActivatedBody.localScale = Vector3.one;
     }
 

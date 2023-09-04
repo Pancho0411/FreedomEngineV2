@@ -60,6 +60,6 @@ public class WalkPlayerState : PlayerState
 					}
 				}
 			}
-		}
+        }
 	}
 }
