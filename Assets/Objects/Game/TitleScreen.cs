@@ -79,6 +79,11 @@ public class TitleScreen : MonoBehaviour
                     StartCoroutine(StartGame());
                     audio.PlayOneShot(startClip);
                 }
+                else if (Input.GetButtonDown("Fire2"))
+                {
+                    started = true;
+                    StartCoroutine(EndGame());                  
+                }
             }
         }
     }
@@ -103,6 +108,28 @@ public class TitleScreen : MonoBehaviour
         }
 
         SceneManager.LoadScene(nextScene);
+    }
+
+    private IEnumerator EndGame()
+    {
+        yield return new WaitForSeconds(startDelay);
+
+        StartCoroutine(Fade(0, 1, fadeOutDuration));
+
+        var elapsedTime = 0f;
+        var initialVolume = startMusicSource.volume;
+
+        while (elapsedTime < fadeOutDuration)
+        {
+            elapsedTime += Time.deltaTime;
+
+            var alpha = elapsedTime / fadeOutDuration;
+            startMusicSource.volume = Mathf.Lerp(initialVolume, 0, alpha);
+
+            yield return null;
+        }
+
+        Application.Quit();
     }
 
     private IEnumerator Fade(float from, float to, float duration)

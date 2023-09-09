@@ -48,11 +48,11 @@ Material:
     m_Floats:
     - _Depth: 0.5
     - _Displacement: 5
-    - _NormalStrength: 0.25
+    - _NormalStrength: 0.75
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Smoothness: 0.75
-    - _Strength: 0.02
+    - _Smoothness: 1
+    - _Strength: 0.5
     m_Colors:
     - _Deep_Water_Color: {r: 0.16313633, g: 0.28666264, b: 0.735849, a: 0.7490196}
     - _Shallow_Water_Color: {r: 0.21542363, g: 0.5808328, b: 0.9716981, a: 0.5019608}
