@@ -3,9 +3,9 @@
 [System.Serializable]
 public class PlayerInput
 {
-	[SerializeField] private string horizontalName = "Horizontal";
-	[SerializeField] private string verticalName = "Vertical";
-	[SerializeField] private string actionName = "Action";
+	[SerializeField] public string horizontalName = "Horizontal";
+	[SerializeField] public string verticalName = "Vertical";
+	[SerializeField] public string actionName = "Action";
 
 	public float horizontal { get; private set; }
 	public float vertical { get; private set; }

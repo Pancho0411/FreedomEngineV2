@@ -17,8 +17,9 @@ public class Player : PlayerMotor
 	public new PlayerCamera camera;
 	public PlayerSkin skin;
 	public GameObject lostRing;
+	public GameObject cameraPos;
 
-	[Header("Scriptables")]
+    [Header("Scriptables")]
 	public PlayerStats stats;
 	public PlayerAudio audios;
 
@@ -226,7 +227,7 @@ public class Player : PlayerMotor
 		var zRotation = (grounded && (angle > stats.minAngleToRotate)) ? transform.eulerAngles.z : 0;
 		var newRotation = Quaternion.Euler(0, 0, zRotation) * Quaternion.Euler(0, yRotation, 0);
 
-		if (!disableSkinRotation)
+        if (!disableSkinRotation)
 		{
 			var maxDegree = 850f * Time.deltaTime;
 			skin.root.rotation = Quaternion.RotateTowards(skin.root.rotation, newRotation, maxDegree);
@@ -435,6 +436,10 @@ public class Player : PlayerMotor
 		disableSkinRotation = disableCameraFollow = false;
 		transform.SetPositionAndRotation(position, rotation);
 		state.ChangeState<WalkPlayerState>();
+		float originalSpeed = camera.maxSpeed;
+		camera.maxSpeed = 1000;
+		camSpeed = respawn(originalSpeed);
+		StartCoroutine(camSpeed);
 	}
 
 	private void OnTriggerEnter(Collider other)
@@ -464,10 +469,25 @@ public class Player : PlayerMotor
 
     [SerializeField] private int poseDelay;
     private IEnumerator pose;
+	private IEnumerator camSpeed;
+
+	//makes player face camera for victory animation
+	public void FaceCam()
+	{
+		disableSkinRotation = true;
+        disableInput = true;
+		//unbind controls
+		input.horizontalName = string.Empty;
+		input.verticalName = string.Empty;
+		input.actionName = string.Empty;
+		velocity = Vector3.zero;
+        skin.root.transform.LookAt(cameraPos.transform);
+	}
 
     private IEnumerator victory()
     {
         yield return new WaitForSeconds(poseDelay);
+		FaceCam();
         state.ChangeState<Goal>();
     }
 
@@ -480,6 +500,10 @@ public class Player : PlayerMotor
 		state.ChangeState<IdleState>();
 	}
 
-
+	public IEnumerator respawn(float speed)
+	{
+		yield return new WaitForSeconds(1);
+		camera.maxSpeed = speed;
+	}
 
 }
