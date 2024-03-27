@@ -19,3 +19,6 @@ MonoBehaviour:
   spinDashRelease: {fileID: 8300000, guid: 43b6bc6edb4ccb84da3ca7c08240a6a5, type: 3}
   ringLoss: {fileID: 8300000, guid: 8057b3c489171234792321afc8a5fc9e, type: 3}
   dead: {fileID: 8300000, guid: 26e50c4475bb20d4ebaf7a644cdeec6c, type: 3}
+  boostStart: {fileID: 8300000, guid: a189e03cf2c5ff140a1cd7ed6a723778, type: 3}
+  stompLand: {fileID: 8300000, guid: a6c062c00220887409d1a2303099974e, type: 3}
+  invincibilityMusic: {fileID: 8300000, guid: 33d0aa479755931449716fd650873ba5, type: 3}

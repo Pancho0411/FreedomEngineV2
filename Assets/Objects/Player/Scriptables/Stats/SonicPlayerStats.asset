@@ -44,3 +44,7 @@ MonoBehaviour:
   maxChargePower: 16
   minReleasePower: 16
   powerLoss: 15
+  boostSpeed: 20
+  boostMeter: 72.796394
+  boostMeterConsumptionRate: 10
+  stompMultiplier: 2

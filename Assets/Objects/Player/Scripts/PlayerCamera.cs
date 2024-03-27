@@ -34,7 +34,14 @@ public class PlayerCamera : MonoBehaviour
 		FollowPlayer();
 		HandleLook();
 		SetCameraState();
-		HandleClamp();
+		if (player.goal)
+		{
+			HandleGoalClamp();
+		}
+		else
+		{
+            HandleClamp();
+        }
 	}
 
 	private void GetCameraState()
@@ -115,7 +122,13 @@ public class PlayerCamera : MonoBehaviour
 		scroller.position = ClampToStageBounds(scroller.position);
 	}
 
-	private Vector3 ClampToStageBounds(Vector3 position)
+    private void HandleGoalClamp()
+    {
+        transform.position = ClampToGoalBounds(transform.position);
+        scroller.position = ClampToGoalBounds(scroller.position);
+    }
+
+    private Vector3 ClampToStageBounds(Vector3 position)
 	{
 		var stageManager = StageManager.Instance;
 
@@ -129,4 +142,19 @@ public class PlayerCamera : MonoBehaviour
 
 		return position;
 	}
+
+    private Vector3 ClampToGoalBounds(Vector3 position)
+    {
+        var stageManager = StageManager.Instance;
+
+        if (stageManager)
+        {
+            position.x = Mathf.Max(position.x, StageManager.Instance.goalBounds.xMin - (frustumWidth * 0.5f));
+            position.x = Mathf.Min(position.x, StageManager.Instance.goalBounds.xMax + (frustumWidth * 0.5f));
+            position.y = Mathf.Max(position.y, StageManager.Instance.goalBounds.yMin - (frustumHeight * 0.5f));
+            position.y = Mathf.Min(position.y, StageManager.Instance.goalBounds.yMax + (frustumHeight * 0.5f));
+        }
+
+        return position;
+    }
 }

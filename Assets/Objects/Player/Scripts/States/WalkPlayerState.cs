@@ -60,6 +60,21 @@ public class WalkPlayerState : PlayerState
 					}
 				}
 			}
+			else if (player.input.boostAction && player.stats.boostMeter != 0)
+            {
+				player.HandleBoost();
+            }
         }
+		else
+		{
+			if (player.input.stompAction)
+			{
+				player.state.ChangeState<StompPlayerState>();
+			}
+			if(player.input.boostAction && player.velocity.y < 0)
+			{
+				player.state.ChangeState<AirBoostPlayerState>();
+			}
+		}
 	}
 }

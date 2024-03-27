@@ -70,6 +70,12 @@ public class PlayerSkin : MonoBehaviour
 		currentActivatedBody.localScale = Vector3.one;
 	}
 
+	public void ActiveBoost(bool value = true)
+	{
+        currentActivatedBody.localScale = Vector3.zero;
+        currentActivatedBody.localScale = Vector3.one;
+    }
+
 	public void ChangeMouth(Mouth mouth)
 	{
 		currentActivatedMouth = (int)mouth;

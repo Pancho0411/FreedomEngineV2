@@ -3,4 +3,7 @@
 	None,
 	Normal,
 	Invincibility,
+	Fire,
+	Bubble,
+	Electricity,
 }

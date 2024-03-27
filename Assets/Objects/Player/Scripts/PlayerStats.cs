@@ -48,4 +48,12 @@ public class PlayerStats : ScriptableObject
 	public float maxChargePower;
 	public float minReleasePower;
 	public float powerLoss;
+
+	[Header("Boost")]
+    public float boostSpeed;
+    public float boostMeter;
+    public float boostMeterConsumptionRate;
+
+	[Header("Stomp")]
+	public float stompMultiplier;
 }

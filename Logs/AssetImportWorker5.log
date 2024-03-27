@@ -1,10 +1,10 @@
 Using pre-set license
-Built from '2022.3/staging' branch; Version is '2022.3.8f1 (b5eafc012955) revision 11922172'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 11  (10.0.22621) 64bit Core' Language: 'en' Physical Memory: 32681 MB
+Built from '2022.3/staging' branch; Version is '2022.3.16f1 (d2c21f0ef2f1) revision 13812255'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 11  (10.0.22631) 64bit Core' Language: 'en' Physical Memory: 32681 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
-S:\Unity\Hub\Editor\2022.3.8f1\Editor\Unity.exe
+S:\Unity\Hub\Editor\2022.3.16f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
@@ -15,7 +15,7 @@ S:/FreedomEngineV2
 -logFile
 Logs/AssetImportWorker5.log
 -srvPort
-53892
+57575
 Successfully changed project path to: S:/FreedomEngineV2
 S:/FreedomEngineV2
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,40 +49,40 @@ S:/FreedomEngineV2
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [12200] Host "[IP] 153.33.74.203 [Port] 0 [Flags] 2 [Guid] 3944133030 [EditorId] 3944133030 [Version] 1048832 [Id] WindowsEditor(7,RyzenDesktop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [27592] Host "[IP] 153.33.74.211 [Port] 0 [Flags] 2 [Guid] 1899179298 [EditorId] 1899179298 [Version] 1048832 [Id] WindowsEditor(7,RyzenDesktop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [12200] Host "[IP] 153.33.74.203 [Port] 0 [Flags] 2 [Guid] 3944133030 [EditorId] 3944133030 [Version] 1048832 [Id] WindowsEditor(7,RyzenDesktop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [27592] Host "[IP] 153.33.74.211 [Port] 0 [Flags] 2 [Guid] 1899179298 [EditorId] 1899179298 [Version] 1048832 [Id] WindowsEditor(7,RyzenDesktop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [Physics::Module] Initialized MultithreadedJobDispatcher with 15 workers.
-Refreshing native plugins compatible for Editor in 2.08 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 4.25 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Initialize engine version: 2022.3.8f1 (b5eafc012955)
-[Subsystems] Discovering subsystems at path S:/Unity/Hub/Editor/2022.3.8f1/Editor/Data/Resources/UnitySubsystems
+Initialize engine version: 2022.3.16f1 (d2c21f0ef2f1)
+[Subsystems] Discovering subsystems at path S:/Unity/Hub/Editor/2022.3.16f1/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path S:/FreedomEngineV2/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
     Renderer: Radeon RX 580 Series (ID=0x67df)
     Vendor:   ATI
-    VRAM:     8135 MB
-    Driver:   31.0.21902.5
+    VRAM:     8170 MB
+    Driver:   31.0.21912.14
 Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
 Initialize mono
-Mono path[0] = 'S:/Unity/Hub/Editor/2022.3.8f1/Editor/Data/Managed'
-Mono path[1] = 'S:/Unity/Hub/Editor/2022.3.8f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
-Mono config path = 'S:/Unity/Hub/Editor/2022.3.8f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56092
+Mono path[0] = 'S:/Unity/Hub/Editor/2022.3.16f1/Editor/Data/Managed'
+Mono path[1] = 'S:/Unity/Hub/Editor/2022.3.16f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'S:/Unity/Hub/Editor/2022.3.16f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56156
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: S:/Unity/Hub/Editor/2022.3.8f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
-Register platform support module: S:/Unity/Hub/Editor/2022.3.8f1/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
-Register platform support module: S:/Unity/Hub/Editor/2022.3.8f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
-Register platform support module: S:/Unity/Hub/Editor/2022.3.8f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
-Register platform support module: S:/Unity/Hub/Editor/2022.3.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Register platform support module: S:/Unity/Hub/Editor/2022.3.8f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
-Register platform support module: S:/Unity/Hub/Editor/2022.3.8f1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll
-Registered in 0.008136 seconds.
-- Loaded All Assemblies, in  0.350 seconds
+Register platform support module: S:/Unity/Hub/Editor/2022.3.16f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: S:/Unity/Hub/Editor/2022.3.16f1/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Register platform support module: S:/Unity/Hub/Editor/2022.3.16f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: S:/Unity/Hub/Editor/2022.3.16f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
+Register platform support module: S:/Unity/Hub/Editor/2022.3.16f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: S:/Unity/Hub/Editor/2022.3.16f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
+Register platform support module: S:/Unity/Hub/Editor/2022.3.16f1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll
+Registered in 0.010105 seconds.
+- Loaded All Assemblies, in  0.307 seconds
 Native extension for UWP target not found
 Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
@@ -90,40 +90,40 @@ Native extension for WindowsStandalone target not found
 [usbmuxd] Listen thread started
 Native extension for iOS target not found
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 236 ms
+Android Extension - Scanning For ADB Devices 228 ms
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.511 seconds
-Domain Reload Profiling: 861ms
-	BeginReloadAssembly (112ms)
+- Finished resetting the current domain, in  0.495 seconds
+Domain Reload Profiling: 802ms
+	BeginReloadAssembly (96ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (33ms)
-	RebuildNativeTypeToScriptingClass (8ms)
-	initialDomainReloadingComplete (51ms)
-	LoadAllAssembliesAndSetupDomain (145ms)
-		LoadAssemblies (114ms)
+	RebuildCommonClasses (34ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (47ms)
+	LoadAllAssembliesAndSetupDomain (120ms)
+		LoadAssemblies (97ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (141ms)
-			TypeCache.Refresh (140ms)
-				TypeCache.ScanAssembly (128ms)
+		AnalyzeDomain (116ms)
+			TypeCache.Refresh (115ms)
+				TypeCache.ScanAssembly (103ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (512ms)
+	FinalizeReload (496ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (469ms)
+		SetupLoadedEditorAssemblies (452ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (347ms)
-			SetLoadedEditorAssemblies (4ms)
+			InitializePlatformSupportModulesInManaged (336ms)
+			SetLoadedEditorAssemblies (3ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (2ms)
+			BeforeProcessingInitializeOnLoad (1ms)
 			ProcessInitializeOnLoadAttributes (80ms)
-			ProcessInitializeOnLoadMethodAttributes (36ms)
+			ProcessInitializeOnLoadMethodAttributes (32ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -131,8 +131,8 @@ Domain Reload Profiling: 861ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.419 seconds
-Refreshing native plugins compatible for Editor in 0.65 ms, found 0 plugins.
+- Loaded All Assemblies, in  0.358 seconds
+Refreshing native plugins compatible for Editor in 1.94 ms, found 0 plugins.
 Native extension for UWP target not found
 Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
@@ -141,358 +141,70 @@ Native extension for Android target not found
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.392 seconds
-Domain Reload Profiling: 810ms
-	BeginReloadAssembly (121ms)
+Package Manager log level set to [2]
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  0.379 seconds
+Domain Reload Profiling: 737ms
+	BeginReloadAssembly (106ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (4ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (22ms)
-	RebuildCommonClasses (26ms)
-	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (27ms)
-	LoadAllAssembliesAndSetupDomain (235ms)
-		LoadAssemblies (201ms)
+		CreateAndSetChildDomain (17ms)
+	RebuildCommonClasses (22ms)
+	RebuildNativeTypeToScriptingClass (7ms)
+	initialDomainReloadingComplete (25ms)
+	LoadAllAssembliesAndSetupDomain (197ms)
+		LoadAssemblies (175ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (102ms)
-			TypeCache.Refresh (79ms)
-				TypeCache.ScanAssembly (63ms)
-			ScanForSourceGeneratedMonoScriptInfo (16ms)
-			ResolveRequiredComponents (7ms)
-	FinalizeReload (392ms)
+		AnalyzeDomain (86ms)
+			TypeCache.Refresh (66ms)
+				TypeCache.ScanAssembly (56ms)
+			ScanForSourceGeneratedMonoScriptInfo (13ms)
+			ResolveRequiredComponents (6ms)
+	FinalizeReload (379ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (258ms)
+		SetupLoadedEditorAssemblies (262ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (32ms)
+			InitializePlatformSupportModulesInManaged (26ms)
 			SetLoadedEditorAssemblies (2ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (40ms)
-			ProcessInitializeOnLoadAttributes (128ms)
-			ProcessInitializeOnLoadMethodAttributes (54ms)
+			BeforeProcessingInitializeOnLoad (43ms)
+			ProcessInitializeOnLoadAttributes (137ms)
+			ProcessInitializeOnLoadMethodAttributes (52ms)
 			AfterProcessingInitializeOnLoad (2ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (4ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
 Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 0.71 ms, found 0 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 2.21 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3425 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 63 unused Assets / (1.9 MB). Loaded Objects now: 3896.
-Memory consumption went from 291.4 MB to 289.5 MB.
-Total: 2.872800 ms (FindLiveObjects: 0.187200 ms CreateObjectMapping: 0.084700 ms MarkObjects: 2.155500 ms  DeleteObjects: 0.444800 ms)
+Unloading 3577 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 79 unused Assets / (1.6 MB). Loaded Objects now: 4034.
+Memory consumption went from 288.9 MB to 287.4 MB.
+Total: 2.852600 ms (FindLiveObjects: 0.221700 ms CreateObjectMapping: 0.077900 ms MarkObjects: 2.206800 ms  DeleteObjects: 0.345600 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/NewBehaviourScript.cs: b21687ddb03d73bd9f0c1daecb9714de -> 
+  custom:CustomObjectIndexerAttribute: 39606d92bcf39ac9cd6fca1116091104 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:CustomObjectIndexerAttribute: d54d2f2da18e7612c182cf67624b6b12 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-========================================================================
-Received Import Request.
-  Time since last request: 15128.250967 seconds.
-  path: Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_stumble00_f_loop.anm.hkx.fbx
-  artifactKey: Guid(c757ca3f55f321546bc331cfaefaf208) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_stumble00_f_loop.anm.hkx.fbx using Guid(c757ca3f55f321546bc331cfaefaf208) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4adfb692d8914f3d479206d7b562ea9') in 0.288486 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 248
-========================================================================
-Received Import Request.
-  Time since last request: 0.102516 seconds.
-  path: Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_trick_d0_sv.anm.hkx.fbx
-  artifactKey: Guid(b5b4aa2501dd3db469ecb162100c7875) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_trick_d0_sv.anm.hkx.fbx using Guid(b5b4aa2501dd3db469ecb162100c7875) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c9344004825886daabd888ac86ae3e1') in 0.085249 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 247
-========================================================================
-Received Import Request.
-  Time since last request: 0.702431 seconds.
-  path: Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_trick_jump.anm.hkx.fbx
-  artifactKey: Guid(42a1e538c61391d4da3929383245caa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_trick_jump.anm.hkx.fbx using Guid(42a1e538c61391d4da3929383245caa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01e3ab088753c8b688de3723b01467da') in 0.065723 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 247
-========================================================================
-Received Import Request.
-  Time since last request: 0.022357 seconds.
-  path: Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_trick_l1_sv.anm.hkx.fbx
-  artifactKey: Guid(d1f09fe60239d1b428b48fe587d28d14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_trick_l1_sv.anm.hkx.fbx using Guid(d1f09fe60239d1b428b48fe587d28d14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0a22b15d92a1307b6735b76c37c7df3') in 0.053723 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 247
-========================================================================
-Received Import Request.
-  Time since last request: 0.018643 seconds.
-  path: Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_trick_mis_f.anm.hkx.fbx
-  artifactKey: Guid(b84e9af307076a046a7e7ee94b9013a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_trick_mis_f.anm.hkx.fbx using Guid(b84e9af307076a046a7e7ee94b9013a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33a7535ff86c66eddcd913e3aba92f59') in 0.053790 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 247
-========================================================================
-Received Import Request.
-  Time since last request: 0.087247 seconds.
-  path: Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_trick_r1_sv.anm.hkx.fbx
-  artifactKey: Guid(af387ad23939d56428f87388f5a883c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_trick_r1_sv.anm.hkx.fbx using Guid(af387ad23939d56428f87388f5a883c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85638a40fd1e8d61e7e0bdef5a6a3340') in 0.062551 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 247
-========================================================================
-Received Import Request.
-  Time since last request: 1.513259 seconds.
-  path: Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_wall_fly00_loop.anm.hkx.fbx
-  artifactKey: Guid(b6e782eea62323746a5d5741026a7ae4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_wall_fly00_loop.anm.hkx.fbx using Guid(b6e782eea62323746a5d5741026a7ae4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b0ab81a46a95b944b90ae0bd4e345db4') in 0.068664 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 247
-========================================================================
-Received Import Request.
-  Time since last request: 0.131192 seconds.
-  path: Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_water_idle00_tired.anm.hkx.fbx
-  artifactKey: Guid(33e190c26f9db65439bc7452cf6c40d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_water_idle00_tired.anm.hkx.fbx using Guid(33e190c26f9db65439bc7452cf6c40d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '539811f5a7209e881745059ae2baea32') in 0.058628 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 247
-========================================================================
-Received Import Request.
-  Time since last request: 0.130122 seconds.
-  path: Assets/Objects/Player/Models/UnleashedSonic/FBX/sns_drift_loop.anm.hkx.fbx
-  artifactKey: Guid(ec37ccfae94c9b54c988767b8b202efb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Player/Models/UnleashedSonic/FBX/sns_drift_loop.anm.hkx.fbx using Guid(ec37ccfae94c9b54c988767b8b202efb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f16f5644bd2e32ffbd8ea31e1af4c657') in 0.058923 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 247
-========================================================================
-Received Import Request.
-  Time since last request: 0.243904 seconds.
-  path: Assets/Objects/Player/Models/UnleashedSonic/FBX/ssn_boost_loop.anm.hkx.fbx
-  artifactKey: Guid(411c876ba6899234e8755331f2cf50e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Player/Models/UnleashedSonic/FBX/ssn_boost_loop.anm.hkx.fbx using Guid(411c876ba6899234e8755331f2cf50e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6acc01ac26a3d1d6389048bbb4c75190') in 0.061409 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 247
-========================================================================
-Received Import Request.
-  Time since last request: 1.022632 seconds.
-  path: Assets/Objects/Player/Models/UnleashedSonic/FBX/ssn_catch_heli_r_s.anm.hkx.fbx
-  artifactKey: Guid(0fb662487503af74cb1f0f74fe542b50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Player/Models/UnleashedSonic/FBX/ssn_catch_heli_r_s.anm.hkx.fbx using Guid(0fb662487503af74cb1f0f74fe542b50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4118a79204355606d3c50937074077bb') in 0.061708 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 247
-========================================================================
-Received Import Request.
-  Time since last request: 26.929343 seconds.
-  path: Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_idle04_sv_b_loop.anm.hkx.fbx
-  artifactKey: Guid(06a2e9d66c1522a4887683478f666abd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_idle04_sv_b_loop.anm.hkx.fbx using Guid(06a2e9d66c1522a4887683478f666abd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1cc641508b57b0524fe9d2ea1c93a6f6') in 0.059069 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 247
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_idle03.anm.hkx.fbx
-  artifactKey: Guid(d0327ecf6f9531d478f36fccb43cff2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_idle03.anm.hkx.fbx using Guid(d0327ecf6f9531d478f36fccb43cff2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ac56120797479ae82cb3b24233c45d3') in 0.058592 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 247
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_homing_act04.anm.hkx.fbx
-  artifactKey: Guid(ab0e025f7833469459615fc21462e4a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_homing_act04.anm.hkx.fbx using Guid(ab0e025f7833469459615fc21462e4a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9379d996c9b0da974205121e622bd1a') in 0.061866 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 247
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_homing_act01.anm.hkx.fbx
-  artifactKey: Guid(43f9affab7a14f04095172ccd56b1086) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_homing_act01.anm.hkx.fbx using Guid(43f9affab7a14f04095172ccd56b1086) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd7f25128381db619d7f95e6141cd94a') in 0.054468 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 247
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_homing_act05.anm.hkx.fbx
-  artifactKey: Guid(3f1a4ca45f4871944964eb670113bdd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_homing_act05.anm.hkx.fbx using Guid(3f1a4ca45f4871944964eb670113bdd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35962a6cab6341b67a42aa9897cc1242') in 0.067090 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 247
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_grind_jump_l.anm.hkx.fbx
-  artifactKey: Guid(99146181789450a40a54b252f43d0e61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_grind_jump_l.anm.hkx.fbx using Guid(99146181789450a40a54b252f43d0e61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cebe33306ee33b33038ee96e938ad55c') in 0.060573 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 247
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_dash_r_loop.anm.hkx.fbx
-  artifactKey: Guid(2cb28d2939d2d7a42aff60466cdc4b45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_dash_r_loop.anm.hkx.fbx using Guid(2cb28d2939d2d7a42aff60466cdc4b45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78cf91eab34f159f66f10d5b25451b00') in 0.067891 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 247
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_damage_f.anm.hkx.fbx
-  artifactKey: Guid(9d5aba1382adaae43a118cb64cab9f1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_damage_f.anm.hkx.fbx using Guid(9d5aba1382adaae43a118cb64cab9f1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2c2d3779dcaddf255bda92c23a71170') in 0.059622 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 247
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_drow_e_loop.anm.hkx.fbx
-  artifactKey: Guid(ba3461585bed4c94990eeaa02b154d20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_drow_e_loop.anm.hkx.fbx using Guid(ba3461585bed4c94990eeaa02b154d20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f351c7529dfcd60aced9277ec50309ea') in 0.058952 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 247
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_box_r_e.anm.hkx.fbx
-  artifactKey: Guid(64d87f14e0ce9e44b88e0f702efcd4e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_box_r_e.anm.hkx.fbx using Guid(64d87f14e0ce9e44b88e0f702efcd4e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '199fe9a45f8f25597e4f08cfb60dfef5') in 0.059053 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 247
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_box_catch_l.anm.hkx.fbx
-  artifactKey: Guid(4eadf03173f2cae4b88eef17d3a2b9ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_box_catch_l.anm.hkx.fbx using Guid(4eadf03173f2cae4b88eef17d3a2b9ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f14646d7d42da86935626a8da5f9250') in 0.057446 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 247
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_grind_r_wall_r.anm.hkx.fbx
-  artifactKey: Guid(7b80284eda3edfb45a6ffacfb8376e28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_grind_r_wall_r.anm.hkx.fbx using Guid(7b80284eda3edfb45a6ffacfb8376e28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df571a5c2d4eb66d761ccd8684d860ac') in 0.059191 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 247
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_grind_switch_l.anm.hkx.fbx
-  artifactKey: Guid(7b8b3d12373121b4091e2d839ede5fa1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_grind_switch_l.anm.hkx.fbx using Guid(7b8b3d12373121b4091e2d839ede5fa1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a27f1f485b80846108e20781c04b9b2') in 0.058309 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 247
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_change_ssn_s.anm.hkx.fbx
-  artifactKey: Guid(e3373f0641eed7641ab6ca0a5d6d428e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_change_ssn_s.anm.hkx.fbx using Guid(e3373f0641eed7641ab6ca0a5d6d428e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '887a9a2c464049b726f18269789d6aeb') in 0.057668 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 247
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_brake01_r.anm.hkx.fbx
-  artifactKey: Guid(951fb8c2e3b785243a6a42508478ac02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_brake01_r.anm.hkx.fbx using Guid(951fb8c2e3b785243a6a42508478ac02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3ced12a4cdc555eb57b0453e0a5a059') in 0.056202 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 247
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_direct_l.anm.hkx.fbx
-  artifactKey: Guid(eec1950a4b4afdc42bf36afb67938988) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_direct_l.anm.hkx.fbx using Guid(eec1950a4b4afdc42bf36afb67938988) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7fe414956d5570085e449ffd3c983423') in 0.062715 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 247
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_grind_f_l_loop.anm.hkx.fbx
-  artifactKey: Guid(48f0f4f96310dd1418c0b1ffe6e6223f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_grind_f_l_loop.anm.hkx.fbx using Guid(48f0f4f96310dd1418c0b1ffe6e6223f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ce01fbb36bd1f86e82476e2c9e3c5b3') in 0.056382 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 247
-========================================================================
-Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_brake_r_turn_idle.anm.hkx.fbx
-  artifactKey: Guid(4366265ddb34b8048b115500629a44d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_brake_r_turn_idle.anm.hkx.fbx using Guid(4366265ddb34b8048b115500629a44d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3214ca9b53b2941eccde8025cfc14579') in 0.057071 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 247
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_grind_squat_l_loop.anm.hkx.fbx
-  artifactKey: Guid(9e90b9a4dd96db94fa4b6fc02986108c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_grind_squat_l_loop.anm.hkx.fbx using Guid(9e90b9a4dd96db94fa4b6fc02986108c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d993667c9067fd0eed4c2677bd16e38') in 0.062591 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 247
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_idle04_a_loop.anm.hkx.fbx
-  artifactKey: Guid(8686e03a7fbff514eaf78f657312a0cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_idle04_a_loop.anm.hkx.fbx using Guid(8686e03a7fbff514eaf78f657312a0cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82cd02709ecbab5278c839b433824361') in 0.056424 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 247
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_damage_b.anm.hkx.fbx
-  artifactKey: Guid(0ed34fba155864c4dbdc945ddf0b206b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_damage_b.anm.hkx.fbx using Guid(0ed34fba155864c4dbdc945ddf0b206b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc36d1d17b06aa456d0c48e60a9e2584') in 0.058470 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 247
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_airboost_loop.anm.hkx.fbx
-  artifactKey: Guid(a41c4dda440b78e448b3e76414b4dc41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_airboost_loop.anm.hkx.fbx using Guid(a41c4dda440b78e448b3e76414b4dc41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5dd84527aefd2aaa61c52275b5587a7') in 0.063406 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 247
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_grind_squat_r_loop.anm.hkx.fbx
-  artifactKey: Guid(1905db3ec4dfb544ea1cb0cfeb2a2f9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_grind_squat_r_loop.anm.hkx.fbx using Guid(1905db3ec4dfb544ea1cb0cfeb2a2f9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc2f67f62d61ec4928ddea66dc91e3f3') in 0.057736 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 247
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_grind_stumble_l_loop.anm.hkx.fbx
-  artifactKey: Guid(1c8351f94d96e904a983ce8a147b073d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_grind_stumble_l_loop.anm.hkx.fbx using Guid(1c8351f94d96e904a983ce8a147b073d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cbad2a54de1bdd34e66ce4268cafa5b2') in 0.059695 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 247
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_boost_loop.anm.hkx.fbx
-  artifactKey: Guid(68bd383bcdc99644498c3081ae77fc74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_boost_loop.anm.hkx.fbx using Guid(68bd383bcdc99644498c3081ae77fc74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37941593bf2cb9f141cec120c25b1061') in 0.060566 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 247
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_box_push_l_loop.anm.hkx.fbx
-  artifactKey: Guid(247d9f8abecd289478067e4d2858cfd9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Objects/Player/Models/UnleashedSonic/FBX/sn_box_push_l_loop.anm.hkx.fbx using Guid(247d9f8abecd289478067e4d2858cfd9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '543da7f5cfbdddf7734922fbac56c00b') in 0.058814 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 247
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: The I/O operation has been aborted because of either a thread exit or an application request.
 AssetImportWorker is now disconnected from the server

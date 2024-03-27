@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using UnityStandardAssets.CrossPlatformInput;
 
 [AddComponentMenu("Freedom Engine/Game/Title Screen")]
 public class TitleScreen : MonoBehaviour
@@ -29,6 +30,12 @@ public class TitleScreen : MonoBehaviour
         InitializeAudio();
         InitializeFader();
         InitializeStartScreen();
+    }
+
+    private void Awake()
+    {
+        Application.targetFrameRate = 60;
+        QualitySettings.vSyncCount = 0;
     }
 
     private void InitializeAudio()
@@ -72,14 +79,14 @@ public class TitleScreen : MonoBehaviour
             }
             else
             {
-                if (Input.GetButtonDown("Start"))
+                if (CrossPlatformInputManager.GetButtonDown("Start"))
                 {
                     started = true;
                     startButton.SetActive(false);
                     StartCoroutine(StartGame());
                     audio.PlayOneShot(startClip);
                 }
-                else if (Input.GetButtonDown("Fire2"))
+                else if (CrossPlatformInputManager.GetButtonDown("Fire2"))
                 {
                     started = true;
                     StartCoroutine(EndGame());                  

@@ -10,4 +10,7 @@ public class PlayerAudio : ScriptableObject
 	public AudioClip spinDashRelease;
 	public AudioClip ringLoss;
 	public AudioClip dead;
+	public AudioClip boostStart;
+    public AudioClip stompLand;
+	public AudioClip invincibilityMusic;
 }

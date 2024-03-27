@@ -8,12 +8,13 @@ public class Goal : PlayerState
 {
     public override void Enter(Player player)
     {
-        player.disableInput = true;   
+        player.velocity = Vector2.zero;
+        player.rotation = 90;
     }
 
     public override void Step(Player player, float deltaTime)
     {
-        player.state.ChangeState<WalkPlayerState>();
+        //player.state.ChangeState<WalkPlayerState>();
     }
 
     public override void Exit(Player player)

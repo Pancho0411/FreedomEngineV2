@@ -24,14 +24,14 @@ public class ScoreManager : MonoBehaviour
 		}
 	}
 
-	[Header("Score UI")]
+    [Header("Score UI")]
 	[SerializeField] private TMP_Text timeCounter = null;
 	[SerializeField] private TMP_Text ringCounter = null;
 	[SerializeField] private TMP_Text lifeCounter = null;
 	[SerializeField] private TMP_Text scoreCounter = null;
-    [SerializeField] private TMP_Text finalScoreCounter = null;
-    [SerializeField] private TMP_Text ringBonusCounter = null;
-    [SerializeField] private TMP_Text timeBonusCounter = null;
+    public TMP_Text finalScoreCounter = null;
+    public TMP_Text ringBonusCounter = null;
+    public TMP_Text timeBonusCounter = null;
     [SerializeField] private Image fader = null;
 
 	[Header("Game Over UI")]
@@ -47,7 +47,6 @@ public class ScoreManager : MonoBehaviour
 	private int rings;
 	private int lifes;
 	private int score;
-	private int finalScore;
 	private int ringBonus;
 	private int timeBonus;
 
@@ -84,16 +83,6 @@ public class ScoreManager : MonoBehaviour
 		{
 			score = value;
 			scoreCounter.text = score.ToString();
-		}
-	}
-
-	public int FinalScore
-	{
-		get { return finalScore; }
-		set
-		{
-			finalScore = value;
-			finalScoreCounter.text = finalScore.ToString();
 		}
 	}
 

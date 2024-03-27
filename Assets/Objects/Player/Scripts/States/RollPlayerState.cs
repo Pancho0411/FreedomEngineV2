@@ -7,7 +7,8 @@ public class RollPlayerState : PlayerState
 		player.attacking = true;
 		player.ChangeBounds(1);
 		player.particles.brakeSmoke.Play();
-	}
+        player.rotation = 0f;
+    }
 
 	public override void Step(Player player, float deltaTime)
 	{
@@ -37,5 +38,6 @@ public class RollPlayerState : PlayerState
 	public override void Exit(Player player)
 	{
 		player.particles.brakeSmoke.Stop();
-	}
+        player.rotation = player.originalRotation;
+    }
 }

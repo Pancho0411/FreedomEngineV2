@@ -8,6 +8,9 @@ TagManager:
   - BackwardTrigger
   - MovingPlatform
   - Goal
+  - Score
+  - Ring
+  - RingItemBox
   layers:
   - Default
   - TransparentFX

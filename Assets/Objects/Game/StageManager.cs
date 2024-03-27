@@ -34,6 +34,7 @@ public class StageManager : MonoBehaviour
     [SerializeField] private Player player = null;
     [SerializeField] private string nextStage = "";
     public Rect bounds;
+    public Rect goalBounds;
 
     [Header("Stage Music")]
     [SerializeField] private AudioClip song = null;
@@ -45,6 +46,11 @@ public class StageManager : MonoBehaviour
     private float startTime;
 
     private new AudioSource audio;
+
+    private void Awake()
+    {
+        Application.targetFrameRate = 60;
+    }
 
     private void StartSingleton()
     {
@@ -106,6 +112,8 @@ public class StageManager : MonoBehaviour
         var titleCardDuration = titleCard.GetComponent<Animator>().GetCurrentAnimatorClipInfo(0)[0].clip.length;
         StartSong();
         player.disableInput = true;
+        player.stats.boostMeter = 100;
+
         player.Respawn(startPoint, startRotation);
         ObjectsManager.Instance.RespawnFreedomObjects();
         yield return new WaitForSeconds(titleCardDuration);
@@ -175,5 +183,8 @@ public class StageManager : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(bounds.center, bounds.size);
+
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireCube(goalBounds.center, goalBounds.size);
     }
 }

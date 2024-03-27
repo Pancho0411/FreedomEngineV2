@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using TMPro;
 
 [AddComponentMenu("Freedom Engine/Objects/Goal Plate")]
 public class GoalPlate : FreedomObject
@@ -8,6 +9,8 @@ public class GoalPlate : FreedomObject
     public Animator animator;
     private bool activated;
     [SerializeField] private int delay;
+    public int bonusScore;
+    public float musicDelay;
 
     private new AudioSource audio;
     [SerializeField] private AudioClip endTheme;
@@ -91,10 +94,38 @@ public class GoalPlate : FreedomObject
                 ScoreManager.Instance.TimeBonus += 0;
             }
 
-            ScoreManager.Instance.FinalScore = ScoreManager.Instance.Score + ScoreManager.Instance.RingBonus + ScoreManager.Instance.TimeBonus;
+            bonusScore = ScoreManager.Instance.Score + ScoreManager.Instance.RingBonus + ScoreManager.Instance.TimeBonus;
 
+            StartCoroutine(bonus());
             endscene = endscreen();
             StartCoroutine(endscene);
         }
+    }
+    private IEnumerator bonus()
+    {
+        yield return new WaitForSecondsRealtime(musicDelay);
+
+        LeanTween.value(ScoreManager.Instance.TimeBonus, 0, 1).setOnUpdate((float val) =>
+        {
+            ScoreManager.Instance.timeBonusCounter.text = ((int)val).ToString();
+        });
+
+        LeanTween.value(ScoreManager.Instance.RingBonus, 0, 1).setOnUpdate((float val) =>
+        {
+            ScoreManager.Instance.ringBonusCounter.text = ((int)val).ToString();
+        });
+
+        LeanTween.value(0, bonusScore, 1).setOnUpdate((float val) =>
+        {
+            ScoreManager.Instance.finalScoreCounter.text =  ((int) val).ToString();
+        });
+
+        StartCoroutine(fader());
+    }
+
+    private IEnumerator fader()
+    {
+        yield return new WaitForSecondsRealtime(2);
+        animator.SetBool("Fade", true);
     }
 }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class DiePlayerState : PlayerState
 {
@@ -13,6 +14,7 @@ public class DiePlayerState : PlayerState
 		player.velocity = Vector3.zero;
 		player.velocity.y = player.stats.diePushUp;
 		player.PlayAudio(player.audios.dead);
+		player.disableInput = true;
 	}
 
 	public override void Step(Player player, float deltaTime)

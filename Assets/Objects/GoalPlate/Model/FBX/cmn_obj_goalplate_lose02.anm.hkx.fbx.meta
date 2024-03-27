@@ -1,9 +1,59 @@
 fileFormatVersion: 2
 guid: 5f9d82982052fac46817aa237a5ae0dd
 ModelImporter:
-  serializedVersion: 19300
+  serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cmn_obj_goalplate_back
+    second: {fileID: 2100000, guid: dfca907d45efd8c47a59866c125875ea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cmn_obj_goalplate_e_beard01
+    second: {fileID: 2100000, guid: 4808f0a027dda5e47b1c95974630ed91, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cmn_obj_goalplate_e_beard02
+    second: {fileID: 2100000, guid: 27de7343f5db21544bff86eda5b2d931, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cmn_obj_goalplate_e_beard03
+    second: {fileID: 2100000, guid: 46342ff1e1a0253459202cf761322ade, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cmn_obj_goalplate_e_body
+    second: {fileID: 2100000, guid: a024bc3c283918d4eb4bab90d8059510, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cmn_obj_goalplate_e_glass
+    second: {fileID: 2100000, guid: 90d1307be195a6943af1d836b63572a0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cmn_obj_goalplate_metal
+    second: {fileID: 2100000, guid: 9782137f035bb1d408ce1b1b42f1cde8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cmn_obj_goalplate_s_body
+    second: {fileID: 2100000, guid: 899a91576e3ee2a4f8f99e457511c065, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cmn_obj_goalplate_s_eyeL
+    second: {fileID: 2100000, guid: 93d05ef21b35b8b46b727319b3649e84, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cmn_obj_goalplate_s_eyeR
+    second: {fileID: 2100000, guid: 05f173fbe52312a42a52a3fbf903a2cc, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -14,6 +64,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -39,26 +90,35 @@ ModelImporter:
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
+    importPhysicalCameras: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
     skinWeightsMode: 0
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
+    optimizeBones: 1
     meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -90,6 +150,9 @@ ModelImporter:
   animationType: 2
   humanoidOversampling: 1
   avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

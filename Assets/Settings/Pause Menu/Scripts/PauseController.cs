@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class PauseController : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class PauseController : MonoBehaviour
     public GameObject scoreUI;
     public GameObject confirmUI;
     public GameObject optionsUI;
+    public GameObject mobileUI;
     public int index = 0;
 
     void Start()
@@ -22,10 +24,11 @@ public class PauseController : MonoBehaviour
     void Update()
     {
         //checks if start button is pressed, toggles gameIsPaused, pauses game if gameIsPaused is true
-        if (Input.GetButtonDown("Start"))
+        if (CrossPlatformInputManager.GetButtonDown("Start"))
         {
             gameIsPaused = !gameIsPaused;
-            if (!gameIsPaused)
+            
+            if (gameIsPaused)
             {
                 PauseGame();
             }
@@ -43,17 +46,12 @@ public class PauseController : MonoBehaviour
         AudioListener.pause = true;
         pauseMenuUI.SetActive(true);
         scoreUI.SetActive(false);
+        mobileUI.SetActive(false);
     }
 
     public void Resume()
     {
-        //if not paused, sets time to 1, unpauses sound, disables pause UI, enables score UI, disables confirm UI if enabled, disables options UI if enabled
-        Time.timeScale = 1;
-        AudioListener.pause = false;
-        pauseMenuUI.SetActive(false);
-        scoreUI.SetActive(true);
-        confirmUI.SetActive(false);
-        optionsUI.SetActive(false);
+        StartCoroutine(ResumeDelay());
     }
 
     public void ConfirmQuit()
@@ -86,6 +84,8 @@ public class PauseController : MonoBehaviour
 
             //resume time
             Time.timeScale = 1f;
+            AudioListener.pause = false;
+
             //add save feature later
 
             //load main menu, by default is first scene
@@ -105,5 +105,22 @@ public class PauseController : MonoBehaviour
             pauseMenuUI.SetActive(true);
             optionsUI.SetActive(false);
         }
+    }
+
+    public IEnumerator ResumeDelay()
+    {
+        //small delay to avoid jumping if on controller
+        yield return new WaitForSecondsRealtime(0.1f);
+
+        //if not paused, sets time to 1, unpauses sound, disables pause UI, enables score UI, disables confirm UI if enabled, disables options UI if enabled
+        Time.timeScale = 1;
+        AudioListener.pause = false;
+        pauseMenuUI.SetActive(false);
+        scoreUI.SetActive(true);
+        confirmUI.SetActive(false);
+        optionsUI.SetActive(false);
+        mobileUI.SetActive(true);
+        gameIsPaused = false;
+
     }
 }

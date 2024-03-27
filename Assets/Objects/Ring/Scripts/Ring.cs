@@ -110,7 +110,8 @@ public class Ring : FreedomObject
 	{
 		collectable = false;
 		model.gameObject.SetActive(false);
-	}
+		GetComponent<Collider>().enabled = false;
+    }
 
 	public void Enable()
 	{
@@ -118,6 +119,7 @@ public class Ring : FreedomObject
 		lifeTimer = 0;
 		uncollectibleTimer = 0;
 		model.gameObject.SetActive(true);
+        GetComponent<Collider>().enabled = true;
 	}
 
 	private void OnTriggerEnter(Collider other)
@@ -125,9 +127,13 @@ public class Ring : FreedomObject
 		if (collectable && other.CompareTag("Player"))
 		{
 			ScoreManager.Instance.Rings++;
+			if(ScoreManager.Instance.Rings % 100 == 0 && ScoreManager.Instance.Rings > 0)
+			{
+				ScoreManager.Instance.Lifes++;
+			}
 			audio.PlayOneShot(collectSound, 0.25f);
 			collectParticle.Play();
 			Disable();
-		}
+        }
 	}
 }

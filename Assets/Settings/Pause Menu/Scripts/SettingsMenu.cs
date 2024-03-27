@@ -198,6 +198,17 @@ public class SettingsMenu : MonoBehaviour {
         pipelineAsset.fsrSharpness = FSRSharpnessSlider.value;
     }
 
+    //following methods are used for main menu
+    public void stopTime()
+    {
+        Time.timeScale = 0f;
+    }
+
+    public void startTime()
+    {
+        Time.timeScale = 1f;
+    }
+
     //Changing shadow resolution at runtime is not yet supported by Unity
     //public void setShadowResolution256()
     //{

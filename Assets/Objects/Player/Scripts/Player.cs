@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using UnityEngine.UI;
+using UnityEngine.Events;
 
 [AddComponentMenu("Freedom Engine/Objects/Player/Player")]
 [RequireComponent(typeof(PlayerSkin))]
@@ -17,9 +19,18 @@ public class Player : PlayerMotor
 	public new PlayerCamera camera;
 	public PlayerSkin skin;
 	public GameObject lostRing;
-	public GameObject cameraPos;
+	public Transform cameraTransfrom;
+	public float rotation;
+	public float originalRotation;
+	public float originalCamSpeed;
+	public GameObject UI;
+	public bool goal;
+    public Slider boostSlider;
 
-    [Header("Scriptables")]
+    private float idleTimer = 0f;
+	public float idleTimeThreshold;
+
+	[Header("Scriptables")]
 	public PlayerStats stats;
 	public PlayerAudio audios;
 
@@ -29,7 +40,7 @@ public class Player : PlayerMotor
 	private int groundedHash;
 
 	public PlayerStateMachine state;
-	private new AudioSource audio;
+	public new AudioSource audio;
 
 	private PlayerShields shield;
 
@@ -52,7 +63,10 @@ public class Player : PlayerMotor
 		InitializeSkin();
 		InitializeAnimatorHash();
 		InitializeLostRingPool();
-	}
+		disableInput = true;
+        originalRotation = rotation;
+		originalCamSpeed = camera.maxSpeed;
+    }
 
 	protected override void OnMotorFixedUpdate(float deltaTime)
 	{
@@ -65,16 +79,42 @@ public class Player : PlayerMotor
 		UpdateInvincibility(deltaTime);
 		state.UpdateState(deltaTime);
 		ClampVelocity();
-		ClampToStageBounds();
-	}
 
-	protected override void OnMotorLateUpdate()
+        if (goal)
+        {
+            ClampToGoalBounds();
+		}
+		else
+		{
+            ClampToStageBounds();
+        }
+
+        if (velocity != Vector2.zero)
+        {
+            idleTimer = 0f;
+        }
+        else
+        {
+            idleTimer += Time.deltaTime;
+            if (idleTimer >= idleTimeThreshold)
+            {
+                state.ChangeState<IdleState>();
+                idleTimer = 0f;
+            }
+        }
+
+        // Update the UI slider value
+        UpdateBoostSlider();
+    }
+
+    protected override void OnMotorLateUpdate()
 	{
-		UpdateSkinTransform();
+		UpdateSkinTransform(rotation);
 		UpdateSkinAnimaiton();
-	}
 
-	protected override void OnGroundEnter()
+    }
+
+    protected override void OnGroundEnter()
 	{
 		particles.landSmoke.Play();
 	}
@@ -160,7 +200,39 @@ public class Player : PlayerMotor
 		}
 	}
 
-	private void InitializeLostRingPool()
+    private void ClampToGoalBounds()
+    {
+        var stageManager = StageManager.Instance;
+
+        if (stageManager && !disableCollision)
+        {
+            var nextPosition = position;
+
+            if ((nextPosition.x - currentBounds.extents.x - wallExtents) < stageManager.goalBounds.xMin)
+            {
+                var safeDistance = stageManager.goalBounds.xMin + currentBounds.extents.x;
+                nextPosition.x = Mathf.Max(nextPosition.x, safeDistance);
+                velocity.x = Mathf.Max(velocity.x, 0);
+            }
+            else if ((nextPosition.x + currentBounds.extents.x + wallExtents) > stageManager.goalBounds.xMax)
+            {
+                var safeDistance = stageManager.goalBounds.xMax - currentBounds.extents.x;
+                nextPosition.x = Mathf.Min(nextPosition.x, safeDistance);
+                velocity.x = Mathf.Min(velocity.x, 0);
+            }
+
+            if ((nextPosition.y - height * 0.5f) < stageManager.goalBounds.yMin)
+            {
+                var safeDistance = stageManager.goalBounds.yMin - height * 0.5f;
+                nextPosition.y = Mathf.Max(nextPosition.y, safeDistance);
+                ApplyDeath();
+            }
+
+            position = nextPosition;
+        }
+    }
+
+    private void InitializeLostRingPool()
 	{
 		for (int i = 0; i < stats.maxLostRingCount; i++)
 		{
@@ -221,13 +293,19 @@ public class Player : PlayerMotor
 		skin.animator.SetBool(groundedHash, grounded);
 	}
 
-	private void UpdateSkinTransform()
+	public void UpdateSkinTransform(float rotation)
 	{
-		var yRotation = 90f - direction * 90f;
+		var yRotation = 90f - direction * 90f + rotation;
+		skin.animator.SetBool("Direction", false);
+		if(direction < 0)
+		{
+			yRotation = 90f - direction * 90f - rotation;
+			skin.animator.SetBool("Direction", true);
+		}
 		var zRotation = (grounded && (angle > stats.minAngleToRotate)) ? transform.eulerAngles.z : 0;
 		var newRotation = Quaternion.Euler(0, 0, zRotation) * Quaternion.Euler(0, yRotation, 0);
 
-        if (!disableSkinRotation)
+		if (!disableSkinRotation)
 		{
 			var maxDegree = 850f * Time.deltaTime;
 			skin.root.rotation = Quaternion.RotateTowards(skin.root.rotation, newRotation, maxDegree);
@@ -270,7 +348,21 @@ public class Player : PlayerMotor
 			case PlayerShields.Normal:
 				particles.normalShield.Play();
 				break;
-		}
+			case PlayerShields.Invincibility:
+				particles.invincibilityShield.Play();
+				break;
+            case PlayerShields.Fire:
+                particles.fireShield.Play();
+                break;
+
+            case PlayerShields.Bubble:
+                particles.bubbleShield.Play();
+                break;
+
+            case PlayerShields.Electricity:
+                particles.electrictyShield.Play();
+                break;
+        }
 	}
 
 	public void PlayAudio(AudioClip clip, float volume = 1f)
@@ -367,6 +459,11 @@ public class Player : PlayerMotor
 		}
 	}
 
+	public void HandleBoost()
+	{
+		state.ChangeState<BoostState>();
+    }
+
 	public void HandleFall()
 	{
 		if (grounded)
@@ -436,10 +533,8 @@ public class Player : PlayerMotor
 		disableSkinRotation = disableCameraFollow = false;
 		transform.SetPositionAndRotation(position, rotation);
 		state.ChangeState<WalkPlayerState>();
-		float originalSpeed = camera.maxSpeed;
 		camera.maxSpeed = 1000;
-		camSpeed = respawn(originalSpeed);
-		StartCoroutine(camSpeed);
+		StartCoroutine(respawn(originalCamSpeed));
 	}
 
 	private void OnTriggerEnter(Collider other)
@@ -460,10 +555,28 @@ public class Player : PlayerMotor
 		}
 		else if (other.CompareTag("Goal"))
 		{
+            goal = true;
+            idleTimeThreshold = 100;
             pose = victory();
-            StartCoroutine(pose);
-		}
-	}
+            StartCoroutine(pose);			
+        }
+        //replenish boost meter with rings
+        else if (other.CompareTag("Ring"))
+        {
+            stats.boostMeter++;
+            stats.boostMeter = Mathf.Clamp(stats.boostMeter, 0f, 100f);
+        }
+    }
+
+    // Method to update the UI slider value
+    private void UpdateBoostSlider()
+    {
+        if (boostSlider != null)
+        {
+            // Ensure the boostSlider reference is not null
+            boostSlider.value = stats.boostMeter;
+        }
+    }
 
     [Header("Delays")]
 
@@ -471,39 +584,20 @@ public class Player : PlayerMotor
     private IEnumerator pose;
 	private IEnumerator camSpeed;
 
-	//makes player face camera for victory animation
-	public void FaceCam()
-	{
-		disableSkinRotation = true;
-        disableInput = true;
-		//unbind controls
-		input.horizontalName = string.Empty;
-		input.verticalName = string.Empty;
-		input.actionName = string.Empty;
-		velocity = Vector3.zero;
-        skin.root.transform.LookAt(cameraPos.transform);
-	}
-
     private IEnumerator victory()
     {
         yield return new WaitForSeconds(poseDelay);
-		FaceCam();
-        state.ChangeState<Goal>();
+        UI.gameObject.SetActive(false);
+        disableInput = true;
+        if (grounded)
+		{
+            state.ChangeState<Goal>();
+        }
     }
-
-	private int idleDelay = 10;
-	public IEnumerator idle;
-
-	public IEnumerator idling()
-	{
-		yield return new WaitForSeconds(idleDelay);
-		state.ChangeState<IdleState>();
-	}
 
 	public IEnumerator respawn(float speed)
 	{
 		yield return new WaitForSeconds(1);
 		camera.maxSpeed = speed;
 	}
-
 }
