@@ -9,6 +9,7 @@ public class PlayerParticles
 	public ParticleSystem normalShield;
     public ParticleSystem invincibilityShield;
     public ParticleSystem fireShield;
+    public ParticleSystem fireAura;
     public ParticleSystem bubbleShield;
     public ParticleSystem electrictyShield;
     public ParticleSystem boostAura;

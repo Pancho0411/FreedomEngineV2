@@ -15,20 +15,21 @@ public class InvincibilityBox : ItemBox
 
     protected override void OnCollect(Player player)
     {
+
         // Play the invincibility music
         invincibilityMusicSource.Play();
-        player.attacking = true;
+        player.SetShield(PlayerShields.Invincibility);
 
         // Lower the volume of the stage music
         stageMusicSource.mute = true;
 
-        StartCoroutine(timer());
+        StartCoroutine(timer(player));
     }
 
-    public IEnumerator timer()
+    public IEnumerator timer(Player player)
     {
         yield return new WaitForSecondsRealtime(time);
-        stageMusicSource.mute = false;
-        invincibilityMusicSource.mute = true;
+        player.SetShield(PlayerShields.None);
+        invincibilityMusicSource.Stop();
     }
 }

@@ -14,7 +14,9 @@ public class Spike : FreedomObject
 			
 			if (Vector3.Dot(transform.up, direction) > 0.7f)
 			{
-				player.ApplyHurt(transform.position);
+				if (!player.invincible) {
+					player.ApplyHurt(transform.position); 
+				}
 			}
 		}
 	}

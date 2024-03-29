@@ -28,10 +28,18 @@ public class StompPlayerState : PlayerState
                 player.state.ChangeState<WalkPlayerState>();
             }
         }
+        else
+        {
+            if (player.dead)
+            {
+                player.state.ChangeState<DiePlayerState>();
+            }
+        }
     }
 
     public override void Exit(Player player)
     {
         player.particles.stompAura.Stop();
+        player.attacking = false;
     }
 }

@@ -39,5 +39,6 @@ public class RollPlayerState : PlayerState
 	{
 		player.particles.brakeSmoke.Stop();
         player.rotation = player.originalRotation;
+		player.attacking = false;
     }
 }

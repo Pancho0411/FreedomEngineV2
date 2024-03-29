@@ -4,7 +4,7 @@ public class WalkPlayerState : PlayerState
 {
 	public override void Enter(Player player)
 	{
-		player.attacking = false;
+		//player.attacking = false;
 		player.ChangeBounds(0);
 	}
 

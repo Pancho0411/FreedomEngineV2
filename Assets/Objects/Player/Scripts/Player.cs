@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using UnityStandardAssets.CrossPlatformInput;
 
 [AddComponentMenu("Freedom Engine/Objects/Player/Player")]
 [RequireComponent(typeof(PlayerSkin))]
@@ -26,6 +27,7 @@ public class Player : PlayerMotor
 	public GameObject UI;
 	public bool goal;
     public Slider boostSlider;
+	public float shieldTimer = 20f;
 
     private float idleTimer = 0f;
 	public float idleTimeThreshold;
@@ -41,16 +43,19 @@ public class Player : PlayerMotor
 
 	public PlayerStateMachine state;
 	public new AudioSource audio;
+    public AudioSource stageMusicSource;
+    public AudioSource invincibilityMusicSource;
 
-	private PlayerShields shield;
+    private PlayerShields shield;
 
     public bool attacking { get; set; }
 	public bool lookingDown { get; set; }
 	public bool lookingUp { get; set; }
 	public bool halfGravity { get; set; }
 	public bool invincible { get; set; }
+    public bool dead { get; set; }
 
-	public float invincibleTimer { get; set; }
+    public float invincibleTimer { get; set; }
 	public int direction { get; private set; }
 
 	private readonly Queue<Ring> lostRingsPool = new Queue<Ring>();
@@ -70,7 +75,7 @@ public class Player : PlayerMotor
 
 	protected override void OnMotorFixedUpdate(float deltaTime)
 	{
-		if (!disableInput)
+        if (!disableInput)
 		{
 			input.InputUpdate();
 			input.UnlockHorizontalControl(deltaTime);
@@ -102,6 +107,12 @@ public class Player : PlayerMotor
                 idleTimer = 0f;
             }
         }
+
+		if(particles.invincibilityShield.isPlaying)
+		{
+			invincible = true;
+			attacking = true;
+		}
 
         // Update the UI slider value
         UpdateBoostSlider();
@@ -343,14 +354,36 @@ public class Player : PlayerMotor
 		switch (shield)
 		{
 			case PlayerShields.None:
-				particles.normalShield.Stop();
-				break;
+				if (particles.normalShield.isPlaying)
+				{
+					particles.normalShield.Stop();
+                }
+				else if (particles.invincibilityShield.isPlaying)
+				{
+					particles.invincibilityShield.Stop();
+					invincible = false;
+					attacking = false;
+                    stageMusicSource.mute = false;                    
+                }
+				else if (particles.fireShield.isPlaying)
+				{
+					particles.fireShield.Stop();
+                }
+				else if (particles.bubbleShield.isPlaying)
+				{
+					particles.bubbleShield.Stop();
+                }
+				else if (particles.electrictyShield.isPlaying)
+                { 
+					particles.electrictyShield.Stop();
+                }
+                break;
 			case PlayerShields.Normal:
 				particles.normalShield.Play();
 				break;
 			case PlayerShields.Invincibility:
 				particles.invincibilityShield.Play();
-				break;
+                break;
             case PlayerShields.Fire:
                 particles.fireShield.Play();
                 break;
@@ -512,8 +545,9 @@ public class Player : PlayerMotor
 	public void ApplyDeath()
 	{
 		var scoreManager = ScoreManager.Instance;
+		dead = true;
 
-		if (scoreManager)
+        if (scoreManager)
 		{
 			scoreManager.Die();
 		}
@@ -534,6 +568,7 @@ public class Player : PlayerMotor
 		transform.SetPositionAndRotation(position, rotation);
 		state.ChangeState<WalkPlayerState>();
 		camera.maxSpeed = 1000;
+		dead = false;
 		StartCoroutine(respawn(originalCamSpeed));
 	}
 
@@ -582,7 +617,6 @@ public class Player : PlayerMotor
 
     [SerializeField] private int poseDelay;
     private IEnumerator pose;
-	private IEnumerator camSpeed;
 
     private IEnumerator victory()
     {
